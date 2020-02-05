@@ -66,20 +66,20 @@ public interface IListaEncadenada<T> {
 	public T darUltimoElemento();
 
 	/**
-	 * Añade un elemento en la primera posicion de la lista.
+	 * Aï¿½ade un elemento en la primera posicion de la lista.
 	 * 
 	 * @param dato
-	 *            El nuevo elemento que se va a añadir.
+	 *            El nuevo elemento que se va a aï¿½adir.
 	 */
-	public void añadirPrimero(T dato);
+	public void setPrimero(T dato);
 
 	/**
-	 * Añade un elemento en la ultima posicion de la lista.
+	 * Aï¿½ade un elemento en la ultima posicion de la lista.
 	 * 
 	 * @param dato
-	 *            El elemento que se quiere añadir.
+	 *            El elemento que se quiere aï¿½adir.
 	 */
-	public void añadirUltimo(T dato);
+	public void setUltimo(T dato);
 
 	/**
 	 * Se elimina el primer elemento de la lista y se retorna el que ahora es el
