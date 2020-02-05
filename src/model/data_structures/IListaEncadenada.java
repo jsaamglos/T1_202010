@@ -9,7 +9,6 @@ public interface IListaEncadenada<T> {
 	 */
 	public int darTamano();
 
-
 	/**
 	 * Se agrega un nuevo elemento a la lista
 	 * 
@@ -55,4 +54,5 @@ public interface IListaEncadenada<T> {
 	 * @return El ultimo elemento de la lista.
 	 */
 	public T darUltimoElemento();
+
 }
