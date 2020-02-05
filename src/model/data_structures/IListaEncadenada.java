@@ -9,14 +9,6 @@ public interface IListaEncadenada<T> {
 	 */
 	public int darTamano();
 
-	/**
-	 * Retornar el elemento en la posicion i
-	 * 
-	 * @param i
-	 *            posicion de consulta
-	 * @return elemento de consulta. null si no hay elemento en posicion.
-	 */
-	public T darElemento(T dato);
 
 	/**
 	 * Se agrega un nuevo elemento a la lista
@@ -31,10 +23,9 @@ public interface IListaEncadenada<T> {
 	 * 
 	 * @param dato
 	 *            Objeto de busqueda en el lista
-	 * @return elemento encontrado en la lista (si existe). null si no se
-	 *         encontro el dato.
+	 * @return True si se encontro el elemento. False de lo contrario
 	 */
-	public T buscarElemento(T dato);
+	public boolean existeElemento(T dato);
 
 	/**
 	 * Eliminar un dato de la lista..
@@ -64,39 +55,4 @@ public interface IListaEncadenada<T> {
 	 * @return El ultimo elemento de la lista.
 	 */
 	public T darUltimoElemento();
-
-	/**
-	 * Añade un elemento en la primera posicion de la lista.
-	 * 
-	 * @param dato
-	 *            El nuevo elemento que se va a añadir.
-	 */
-	public void añadirPrimero(T dato);
-
-	/**
-	 * Añade un elemento en la ultima posicion de la lista.
-	 * 
-	 * @param dato
-	 *            El elemento que se quiere añadir.
-	 */
-	public void añadirUltimo(T dato);
-
-	/**
-	 * Se elimina el primer elemento de la lista y se retorna el que ahora es el
-	 * primer elemento
-	 * 
-	 * @return El nuevo elemento que ahora es el primero (nulo si la lista es
-	 *         vacia.)
-	 */
-	public T eliminarPrimero();
-
-	/**
-	 * Se elimina el ultimo elemento de la lista y se retorna el que ahora es el
-	 * ultimo elemento
-	 * 
-	 * @return El nuevo elemento que ahora es el ultimo (nulo si la lista es
-	 *         vacia.)
-	 */
-	public T eliminarUltimo();
-
 }
