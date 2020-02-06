@@ -14,6 +14,16 @@ public class Multa {
 	public Multa(Caracteristica pPropiedades, Ubicacion pUbicacion) {
 		this.caracteristicas = pPropiedades;
 		this.ubicacion = pUbicacion;
-	}
+    }
+    
+    public Caracteristica getCaracteristicas()
+    {
+        return caracteristicas;
+    }
+
+    public Ubicacion getUbicacion()
+    {
+        return ubicacion;
+    }
 
 }

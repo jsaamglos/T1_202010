@@ -15,4 +15,23 @@ public class PrimeraClase {
 		crs = pCrs;
 	}
 
+	public ListaEncadenada<Multa> getLista()
+	{
+		return features;
+	}
+
+	public String getType()
+	{
+		return type;
+	}
+
+	public String getNombre()
+	{
+		return nombre;
+	}
+
+	public String getCrs()
+	{
+		return crs;
+	}
 }
