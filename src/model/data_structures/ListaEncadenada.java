@@ -75,7 +75,22 @@ public class ListaEncadenada <T> implements IListaEncadenada <T>
 			System.out.println("No se encontro el elemento a eliminar.");
 		}
 
-	}
+    }
+    
+    public T darElemento(int index)
+    {
+        T elemento = null;
+        if(index < tamano)
+        {
+            Node<T> n = primerElemento;
+            for(int i = 0; i < index + 1;)
+            {
+                n = n.getSiguiente();
+            }
+            elemento = n.getElemento();
+        }
+        return elemento;
+    }
 
 	// existen elementos en la lista?
 	public boolean isEmpty() {
