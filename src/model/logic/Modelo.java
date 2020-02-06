@@ -11,23 +11,14 @@ public class Modelo {
 	/**
 	 * Atributos del modelo del mundo
 	 */
-	private IListaEncadenada datos;
+	private IListaEncadenada<Multa> datos;
 	
 	/**
 	 * Constructor del modelo del mundo con capacidad predefinida
 	 */
 	public Modelo()
 	{
-		datos = new ListaEncadenada();
-	}
-	
-	/**
-	 * Constructor del modelo del mundo con capacidad dada
-	 * @param tamano
-	 */
-	public Modelo(int capacidad)
-	{
-		datos = new ListaEncadenada();
+		datos = new ListaEncadenada<Multa>();
 	}
 	
 	/**
@@ -43,9 +34,9 @@ public class Modelo {
 	 * Requerimiento de agregar dato
 	 * @param dato
 	 */
-	public void agregar(String dato)
+	public void agregar(Multa dato)
 	{	
-		//datos.agregar(dato);
+		datos.agregarElemento(dato);
 	}
 	
 	/**
@@ -53,10 +44,10 @@ public class Modelo {
 	 * @param dato Dato a buscar
 	 * @return dato encontrado
 	 */
-	public String buscar(String dato)
+	public String buscar(int id)
 	{
 		return null;
-		//return datos.buscar(dato);
+		//TODO
 	}
 	
 	/**
@@ -64,9 +55,9 @@ public class Modelo {
 	 * @param dato Dato a eliminar
 	 * @return dato eliminado
 	 */
-	public String eliminar(String dato)
+	public void eliminar(Multa dato)
 	{
-		return null;
+		datos.eliminarElemento(dato);
 		//return datos.eliminar(dato);
 	}
 
