@@ -1,6 +1,6 @@
 package model.data_structures;
 
-public class ListaEncadenada <T>
+public class ListaEncadenada <T> implements IListaEncadenada
 {
     //apuntador a primer elemento
     private Node<T> primerElemento;
