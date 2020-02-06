@@ -1,3 +1,5 @@
+package model.data_structures;
+
 public class ListaEncadenada <T>
 {
     //apuntador a primer elemento
@@ -21,15 +23,14 @@ public class ListaEncadenada <T>
         
         if(primerElemento == null)
         {
-            Node nodo = new Node(dato, null);
+            Node<T> nodo = new Node<T>(dato, null);
             //agrega el nodo como ultimo y primer elemento
             primerElemento = nodo;
             ultimoElemento = nodo;
         }else
         {
             //pone el elemento al final de la fila
-            ultimoElemento = new Node(ultimoElemento);
-            ultimoElemento = nodo;
+            ultimoElemento = new Node<T>(dato, ultimoElemento);
         }
 
         //incrementa el tamaño
@@ -46,7 +47,7 @@ public class ListaEncadenada <T>
     public boolean existeElemento(T dato)
     {
         //crea nodo igual al primer elemento
-        Node nodo = primerElemento;
+        Node<T> nodo = primerElemento;
 
         //itera los elementos hasta que se acaben o encuentre el elemento
         while(nodo != null && !nodo.getElemento().equals(dato))
@@ -61,7 +62,7 @@ public class ListaEncadenada <T>
     public void eliminarElemento(T dato)
     {
         //crea nodo igual al primer elemento
-        Node nodo = primerElemento;
+        Node<T> nodo = primerElemento;
 
         //itera los elementos hasta que se acaben o encuentre el elemento
         while(nodo != null && !nodo.getElemento().equals(dato))
@@ -96,13 +97,13 @@ public class ListaEncadenada <T>
     //retorna primer elemento
     public T darPrimerElemento()
     {
-        return primerElemento.darElemento();
+        return primerElemento.getElemento();
     }
 
     //retorna ultimo elemento
     public T darUltimoElemento()
     {
-        return ultimoElemento.darElemento();
+        return ultimoElemento.getElemento();
     }
 
 }

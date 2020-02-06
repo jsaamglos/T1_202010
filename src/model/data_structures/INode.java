@@ -22,7 +22,7 @@ public interface INode<T> {
 	 * @param dato
 	 *            el nodo que seria el siguiente a este.
 	 */
-	public void setSiguiente(T dato);
+	public void setSiguiente(Node<T> nodo);
 
 	/**
 		/**
@@ -31,7 +31,7 @@ public interface INode<T> {
 	 * @param dato
 	 *            el nodo que seria el anterior a este.
 	 */
-	public void setAnterior(T dato);
+	public void setAnterior(Node<T> nodo);
 
 	/**
 	 * Retorna el elemento almacenado en este nodo

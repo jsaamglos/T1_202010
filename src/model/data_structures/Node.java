@@ -1,16 +1,18 @@
-public class Node <T>
+package model.data_structures;
+
+public class Node <T> implements INode<T>
 {
     //apuntador al siguiente elemento
-    private Node siguienteElemento;
+    private Node<T> siguienteElemento;
 
     //apuntador al elemento anterior
-    private Node anteriorElamento;
+    private Node<T> anteriorElamento;
 
     //elemento
     private T elemento;
 
     //constructor
-    public Node(T elemento, Node anterior)
+    public Node(T elemento, Node<T> anterior)
     {
         this.elemento = elemento;
         anteriorElamento = anterior;
@@ -18,27 +20,15 @@ public class Node <T>
     }
 
     //da el elemento siguiente
-    public Node getSiguiente()
+    public Node<T> getSiguiente()
     {
         return siguienteElemento;
     }
 
     //da el elemento anterior
-    public Node getAnterior()
+    public Node<T> getAnterior()
     {
         return anteriorElamento;
-    }
-
-    //agrega el siguiente
-    public void setSiguiente(Node nodo)
-    {
-        siguiente = nodo;
-    }
-
-    //agrega el anterior
-    public void setAnterior(Node nodo)
-    {
-        anterior = nodo;
     }
 
     //returna el elemento
@@ -47,4 +37,16 @@ public class Node <T>
         return elemento;
     }
 
+    //asigna el nodo por parametro al siguiete
+    @Override
+    public void setSiguiente(Node<T> nodo) {
+        siguienteElemento = nodo;
+
+    }
+
+    //asigna el nodo por parametro al anterior
+    @Override
+    public void setAnterior(Node<T> nodo) {
+        anteriorElamento = nodo;
+    }
 }
