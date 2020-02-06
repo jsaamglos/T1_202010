@@ -93,6 +93,7 @@ public class ListaEncadenada<T> implements IListaEncadenada<T>, Iterable<T> {
         return ultimoElemento.getElemento();
     }
 
+    //https://www.arquitecturajava.com/java-iterable-interface-y-como-implementarlo/
     //metodo de iterador
     @Override
     public Iterator<T> iterator() 
@@ -121,7 +122,6 @@ public class ListaEncadenada<T> implements IListaEncadenada<T>, Iterable<T> {
                 {
                     actual = actual.getSiguiente();
                 }
-              
                 return actual.getElemento();
             }
         };

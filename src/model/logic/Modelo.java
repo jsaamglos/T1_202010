@@ -1,6 +1,5 @@
 package model.logic;
 
-import model.data_structures.ArregloDinamico;
 import model.data_structures.IListaEncadenada;
 import model.data_structures.ListaEncadenada;
 
@@ -28,7 +27,7 @@ public class Modelo {
 	 */
 	public Modelo(int capacidad)
 	{
-		datos = new ArregloDinamico(capacidad);
+		datos = new ListaEncadenada();
 	}
 	
 	/**
@@ -46,7 +45,7 @@ public class Modelo {
 	 */
 	public void agregar(String dato)
 	{	
-		datos.agregar(dato);
+		//datos.agregar(dato);
 	}
 	
 	/**
@@ -56,7 +55,8 @@ public class Modelo {
 	 */
 	public String buscar(String dato)
 	{
-		return datos.buscar(dato);
+		return null;
+		//return datos.buscar(dato);
 	}
 	
 	/**
@@ -66,7 +66,8 @@ public class Modelo {
 	 */
 	public String eliminar(String dato)
 	{
-		return datos.eliminar(dato);
+		return null;
+		//return datos.eliminar(dato);
 	}
 
 
