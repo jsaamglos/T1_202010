@@ -19,7 +19,7 @@ public class Modelo {
 	 */
 
 	private IListaEncadenada<Multa> datos;
-	private String path = "./data//T1_202010/data/comparendos_dei_2018_small.geojson";
+	private String path = ".data/comparendos_dei_2018_small.geojson";
 
 	/**
 	 * Constructor del modelo del mundo con capacidad predefinida
@@ -34,6 +34,7 @@ public class Modelo {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		
 	}
 
 	/**
