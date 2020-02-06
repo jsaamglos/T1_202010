@@ -13,7 +13,7 @@ public class TestModelo {
 	
 	@Before
 	public void setUp1() {
-		modelo= new Modelo(CAPACIDAD);
+		modelo= new Modelo();
 	}
 
 	public void setUp2() {
@@ -30,6 +30,7 @@ public class TestModelo {
 
 	@Test
 	public void testDarTamano() {
+		assertTrue(modelo.darTamano()==20);
 		// TODO
 	}
 

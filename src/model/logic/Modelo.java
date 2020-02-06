@@ -1,5 +1,11 @@
 package model.logic;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+import com.google.gson.Gson;
+import com.google.gson.stream.JsonReader;
+
 import model.data_structures.IListaEncadenada;
 import model.data_structures.ListaEncadenada;
 
@@ -13,15 +19,23 @@ public class Modelo {
 	 */
 
 	private IListaEncadenada<Multa> datos;
-	
+	private String path = "./data//T1_202010/data/comparendos_dei_2018_small.geojson";
+
 	/**
 	 * Constructor del modelo del mundo con capacidad predefinida
 	 */
-	public Modelo()
-	{
-		datos = new ListaEncadenada<Multa>();
+	public Modelo() {
+		Gson gson = new Gson();
+		JsonReader reader;
+		try {
+			reader = new JsonReader(new FileReader(path));
+			PrimeraClase pc = gson.fromJson(reader, PrimeraClase.class);
+			System.out.println(pc);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
-	
+
 	/**
 	 * Servicio de consulta de numero de elementos presentes en el modelo
 	 * 
@@ -37,8 +51,7 @@ public class Modelo {
 	 * @param dato
 	 */
 
-	public void agregar(Multa dato)
-	{	
+	public void agregar(Multa dato) {
 
 		datos.agregarElemento(dato);
 	}
@@ -51,10 +64,9 @@ public class Modelo {
 	 * @return dato encontrado
 	 */
 
-	public String buscar(int id)
-	{
+	public String buscar(int id) {
 		return null;
-		//TODO
+		// TODO
 	}
 
 	/**
@@ -65,10 +77,9 @@ public class Modelo {
 	 * @return dato eliminado
 	 */
 
-	public void eliminar(Multa dato)
-	{
+	public void eliminar(Multa dato) {
 		datos.eliminarElemento(dato);
-		//return datos.eliminar(dato);
+		// return datos.eliminar(dato);
 	}
 
 }
