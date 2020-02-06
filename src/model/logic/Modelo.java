@@ -1,7 +1,8 @@
 package model.logic;
 
 import model.data_structures.ArregloDinamico;
-import model.data_structures.IArregloDinamico;
+import model.data_structures.IListaEncadenada;
+import model.data_structures.ListaEncadenada;
 
 /**
  * Definicion del modelo del mundo
@@ -11,14 +12,14 @@ public class Modelo {
 	/**
 	 * Atributos del modelo del mundo
 	 */
-	private IArregloDinamico datos;
+	private IListaEncadenada datos;
 	
 	/**
 	 * Constructor del modelo del mundo con capacidad predefinida
 	 */
 	public Modelo()
 	{
-		datos = new ArregloDinamico(7);
+		datos = new ListaEncadenada();
 	}
 	
 	/**

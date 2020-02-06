@@ -1,6 +1,7 @@
 package model.data_structures;
 
-public interface IListaEncadenada<T> {
+public interface IListaEncadenada<T>
+{
 
 	/**
 	 * Retornar el numero de elementos presentes en la lista.

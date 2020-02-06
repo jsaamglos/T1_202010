@@ -1,109 +1,133 @@
 package model.data_structures;
 
-public class ListaEncadenada <T> implements IListaEncadenada
-{
-    //apuntador a primer elemento
+import java.util.Iterator;
+
+public class ListaEncadenada<T> implements IListaEncadenada<T>, Iterable<T> {
+    // apuntador a primer elemento
     private Node<T> primerElemento;
 
-    //apuntador a ultimo elemento
+    // apuntador a ultimo elemento
     private Node<T> ultimoElemento;
 
-    //tamaño de la lista    
-    private int tamaño;
+    // tamano de la lista
+    private int tamano;
 
-    //constructor
-    public ListaEncadenada()
-    {
-        tamaño = 0;
+    // constructor
+    public ListaEncadenada() {
+        tamano = 0;
     }
 
-    //agrega un elemento
-    public void agregarElemento(T dato)
-    {
-        
-        if(primerElemento == null)
-        {
+    // agrega un elemento
+    public void agregarElemento(T dato) {
+
+        if (primerElemento == null) {
             Node<T> nodo = new Node<T>(dato, null);
-            //agrega el nodo como ultimo y primer elemento
+            // agrega el nodo como ultimo y primer elemento
             primerElemento = nodo;
             ultimoElemento = nodo;
-        }else
-        {
-            //pone el elemento al final de la fila
+        } else {
+            // pone el elemento al final de la fila
             ultimoElemento = new Node<T>(dato, ultimoElemento);
         }
 
-        //incrementa el tamaño
-        tamaño++;
+        // incrementa el tamano
+        tamano++;
     }
 
-    //retorna el tamaño de la lista 
-    public int darTamaño()
-    {
-        return tamaño;
+    // retorna el tamano de la lista
+    public int darTamano() {
+        return tamano;
     }
 
-    //retorna el elemento dado por parametro
-    public boolean existeElemento(T dato)
-    {
-        //crea nodo igual al primer elemento
+    // retorna el elemento dado por parametro
+    public boolean existeElemento(T dato) {
+        // crea nodo igual al primer elemento
         Node<T> nodo = primerElemento;
 
-        //itera los elementos hasta que se acaben o encuentre el elemento
-        while(nodo != null && !nodo.getElemento().equals(dato))
-        {
+        // itera los elementos hasta que se acaben o encuentre el elemento
+        while (nodo != null && !nodo.getElemento().equals(dato)) {
             nodo = nodo.getSiguiente();
         }
 
-        //retorna true si encontro el elemento
+        // retorna true si encontro el elemento
         return nodo != null;
     }
 
-    public void eliminarElemento(T dato)
-    {
-        //crea nodo igual al primer elemento
+    public void eliminarElemento(T dato) {
+        // crea nodo igual al primer elemento
         Node<T> nodo = primerElemento;
 
-        //itera los elementos hasta que se acaben o encuentre el elemento
-        while(nodo != null && !nodo.getElemento().equals(dato))
-        {
+        // itera los elementos hasta que se acaben o encuentre el elemento
+        while (nodo != null && !nodo.getElemento().equals(dato)) {
             nodo = nodo.getSiguiente();
         }
 
-        //se encontro el nodo?
-        if(nodo != null)
-        {
-            //borra el nodo de la existencia
+        // se encontro el nodo?
+        if (nodo != null) {
+            // borra el nodo de la existencia
             nodo.getAnterior().setSiguiente(nodo.getSiguiente());
             nodo.getSiguiente().setAnterior(nodo.getAnterior());
 
-            //baja en uno el tamaño
-            tamaño--;
+            // baja en uno el tamano
+            tamano--;
 
-        }else
-        {
-            //Bruh, no esta el nodo
+        } else {
+            // Bruh, no esta el nodo
             System.out.println("No se encontro el elemento a eliminar.");
         }
 
     }
 
-    //existen elementos en la lista?
-    public boolean isEmpty()
-    {
-        return tamaño == 0;
+    // existen elementos en la lista?
+    public boolean isEmpty() {
+        return tamano == 0;
     }
 
-    //retorna primer elemento
-    public T darPrimerElemento()
-    {
+    // retorna primer elemento
+    public T darPrimerElemento() {
         return primerElemento.getElemento();
     }
 
-    //retorna ultimo elemento
-    public T darUltimoElemento()
-    {
+    // retorna ultimo elemento
+    public T darUltimoElemento() {
         return ultimoElemento.getElemento();
+    }
+
+    //metodo de iterador
+    @Override
+    public Iterator<T> iterator() 
+    {
+        //crea iterador
+        Iterator<T> i = new Iterator<T>()
+        {
+            private Node<T> actual;
+
+            //metodo para saber si existe un siguiente
+            @Override
+            public boolean hasNext() {
+            
+                return actual.getSiguiente() != null;
+            
+            }
+
+            //metodo para sacar el siguiente
+            @Override
+            public T next() {
+            
+                if(actual == null)
+                {
+                    actual = primerElemento;
+                }else
+                {
+                    actual = actual.getSiguiente();
+                }
+              
+                return actual.getElemento();
+            }
+        };
+
+        //retorna el iterador
+        return i;
     }
 
 }
