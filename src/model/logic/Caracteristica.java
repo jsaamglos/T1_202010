@@ -25,4 +25,44 @@ public class Caracteristica {
 		LOCALIDAD = localidad;
 	}
 
+	public int getId()
+	{
+		return OBJECTID;
+	}
+
+	public String getFecha()
+	{
+		return FECHA_HORA;
+	}
+
+	public String getMedio()
+	{
+		return MEDIO_DETE;
+	}
+
+	public String getClaseVehiculo()
+	{
+		return CLASE_VEHI;
+	}
+
+	public String getServicio()
+	{
+		return TIPO_SERVI;
+	}
+
+	public String getInfraccion()
+	{
+		return INFRACCION;
+	}
+
+	public String getDesInfraccioin()
+	{
+		return DES_INFRAC;
+	}
+
+	public String getLocalidad()
+	{
+		return LOCALIDAD;
+	}
+
 }

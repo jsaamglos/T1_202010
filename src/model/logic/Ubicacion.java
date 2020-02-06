@@ -1,16 +1,25 @@
 package model.logic;
 
-import java.util.List;
-
-public class Ubicacion {
+public class Ubicacion 
+{
 	private String type;
-	private List<Double> coord;
+	private Double[] coord;
 
-	public Ubicacion(String pType, List<Double> pCoord) {
+	public Ubicacion(String pType, Double[] pCoord) {
 
 		type = pType;
 		coord = pCoord;
 
+	}
+
+	public String getType()
+	{
+		return type;
+	}
+
+	public Double[] getCoord()
+	{
+		return coord;
 	}
 
 }
