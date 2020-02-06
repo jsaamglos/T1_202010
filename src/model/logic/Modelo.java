@@ -1,6 +1,5 @@
 package model.logic;
 
-import model.data_structures.ArregloDinamico;
 import model.data_structures.IListaEncadenada;
 import model.data_structures.ListaEncadenada;
 
@@ -12,15 +11,17 @@ public class Modelo {
 	/**
 	 * Atributos del modelo del mundo
 	 */
-	private IListaEncadenada datos;
 
+	private IListaEncadenada<Multa> datos;
+	
 	/**
 	 * Constructor del modelo del mundo con capacidad predefinida
 	 */
-	public Modelo() {
-		datos = new ListaEncadenada();
+	public Modelo()
+	{
+		datos = new ListaEncadenada<Multa>();
 	}
-
+	
 	/**
 	 * Servicio de consulta de numero de elementos presentes en el modelo
 	 * 
@@ -35,7 +36,10 @@ public class Modelo {
 	 * 
 	 * @param dato
 	 */
-	public void agregar(String dato) {
+
+	public void agregar(Multa dato)
+	{	
+
 		datos.agregarElemento(dato);
 	}
 
@@ -46,8 +50,11 @@ public class Modelo {
 	 *            Dato a buscar
 	 * @return dato encontrado
 	 */
-	public String buscar(String dato) {
-		return datos.existeElemento(dato);
+
+	public String buscar(int id)
+	{
+		return null;
+		//TODO
 	}
 
 	/**
@@ -57,8 +64,11 @@ public class Modelo {
 	 *            Dato a eliminar
 	 * @return dato eliminado
 	 */
-	public void eliminar(String dato) {
+
+	public void eliminar(Multa dato)
+	{
 		datos.eliminarElemento(dato);
+		//return datos.eliminar(dato);
 	}
 
 }

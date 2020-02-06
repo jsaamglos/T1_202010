@@ -1,8 +1,7 @@
 package model.data_structures;
 
-import java.util.Iterator;
-
-public class ListaEncadenada<T> implements IListaEncadenada<T>, Iterable<T> {
+public class ListaEncadenada <T> implements IListaEncadenada <T>
+{
 	// apuntador a primer elemento
 	private Node<T> primerElemento;
 
@@ -91,39 +90,6 @@ public class ListaEncadenada<T> implements IListaEncadenada<T>, Iterable<T> {
 	// retorna ultimo elemento
 	public T darUltimoElemento() {
 		return ultimoElemento.getElemento();
-	}
-
-	// metodo de iterador
-	@Override
-	public Iterator<T> iterator() {
-		// crea iterador
-		Iterator<T> i = new Iterator<T>() {
-			private Node<T> actual;
-
-			// metodo para saber si existe un siguiente
-			@Override
-			public boolean hasNext() {
-
-				return actual.getSiguiente() != null;
-
-			}
-
-			// metodo para sacar el siguiente
-			@Override
-			public T next() {
-
-				if (actual == null) {
-					actual = primerElemento;
-				} else {
-					actual = actual.getSiguiente();
-				}
-
-				return actual.getElemento();
-			}
-		};
-
-		// retorna el iterador
-		return i;
 	}
 
 }
